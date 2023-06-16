@@ -22,7 +22,7 @@ function count() {
             var diff = Math.abs(date.getTime() - inputdate.getTime());
             var yeardiff = (diff / 31536000000).toFixed(0);
             
-            document.querySelector('.calyear').innerHTML = yeardiff;
+            // document.querySelector('.calyear').innerHTML = yeardiff;
             document.getElementById('erroryear').style.removeProperty("color");
             document.querySelector('.eroryear').innerHTML = "";
             document.getElementById('year').style.removeProperty("border-color");
@@ -40,9 +40,10 @@ function count() {
             }
             else {
                 yeardiff--;
-                
+                console.log(yeardiff)                
                 var monthAge = 12 + currentmonth - month;
                 document.querySelector('.calmonth').innerHTML = (monthAge -1).toFixed(0);
+                document.querySelector('.calyear').innerHTML = yeardiff;
             }
             document.getElementById('errormonth').style.removeProperty("color");
             document.querySelector('.errormonth').innerHTML = "";
